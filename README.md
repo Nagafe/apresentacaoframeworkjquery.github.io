@@ -1,10 +1,3 @@
-# apresentacaoframeworkjquery.github.io
-Compreendido\! Vou adicionar no `README.md` a informação sobre o problema comum do GitHub Pages que você encontrou e como o resolveu, o que será muito útil para outras pessoas que consultarem seu repositório.
-
-Aqui está o `README.md` atualizado com a seção sobre a URL do GitHub Pages:
-
------
-
 # Projeto Final: Website do Curso de Sistemas para Internet 🚀
 
 Este repositório contém o projeto final da disciplina de **Frameworks Front-End** do curso de **Tecnologia em Sistemas para Internet** do IFMT Cuiabá - Cel. Octayde Jorge da Silva, referente ao 2º Semestre de 2025.
@@ -81,34 +74,14 @@ apresentacaoframeworkjquery.github.io/  (raiz do seu repositório)
     ├── sistemas-imagem.jpeg
     ├── sistemas-imagem3.jpg
     └── ifmt-linha-do-tempo.jpg
-```
-
------
-
-## 🚀 Como Executar o Projeto
-
-Para visualizar o projeto, siga estes passos simples:
-
-1.  **Clone o repositório** para a sua máquina local:
-    ```bash
-    git clone https://github.com/nagafe/apresentacaoframeworkjquery.github.io.git
-    ```
-2.  **Navegue até a pasta raiz do projeto clonado**:
-    ```bash
-    cd apresentacaoframeworkjquery.github.io
-    ```
-3.  **Abra os arquivos HTML** (`index.html`, `sistemas.html`, `tutorial.html`) diretamente no seu navegador web de preferência. Não é necessário um servidor web.
 
 -----
 
 ## 🔗 GitHub Pages
 
-Este projeto está hospedado no GitHub Pages e pode ser acessado em:
-**`https://nagafe.github.io/`**
 
-**Nota sobre a URL:** É comum que repositórios de usuário (`username.github.io`) esperem o conteúdo na raiz do repositório para serem exibidos diretamente no domínio principal (`https://username.github.io/`). Se o repositório fosse um "Projeto de Organização" ou "Projeto Pessoal" com um nome diferente de `username.github.io`, a URL incluiria o nome do repositório como uma subpasta (ex: `https://username.github.io/nome-do-repositorio/`). No seu caso, a URL é simplificada porque o repositório principal tem o formato esperado.
+https://github.com/nagafe/apresentacaoframeworkjquery.github.io.git
 
------
 
 ## 🛠️ Tecnologias Utilizadas
 
