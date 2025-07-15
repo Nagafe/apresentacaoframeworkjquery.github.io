@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nagafe Martins Trabalho Final - Tutorial jQuery e Bootstrap 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/formatacao.css">
+    <style>
+        /* Estilo adicional para os exemplos de código */
+        .exemplo-codigo {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+        }
+        .exemplo-codigo pre {
+            margin: 0;
+        }
+    </style>
+   
+      <script>
+        $(document).ready(function() {
+            $(".btn-warning").click(function(){
+                $(".css-example-p").css({"background-color": "yellow", "font-size": "200%"});
+            });
+            
+            $(document).ready(function(){
+                $(".btn-info").click(function(){
+                $("#p-toggle-1, #p-toggle-2").toggle("slow"); // Altera a visibilidade dos parágrafos específicos
+        });
+    });
+
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="imagens/logo-ifmt.png" alt="Logo IFMT" class="img-fluid" style="width: 130px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavBar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavBar">
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="index.html">História</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="sistemas.html">Sistemas para Internet</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="tutorial.html">Tutorial jQuery e Bootstrap 4</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container-fluid h-100">
+        <div class="row jumbotron">
+            <div class="col-12 d-flex flex-column align-items-center">
+                <h1>Tutorial: jQuery e Bootstrap 4</h1>
+                <div class="col-8 d-flex flex-column align-items-center">
+                    <p>
+                        Nesta página, vamos explorar alguns componentes e funcionalidades essenciais do <strong>Bootstrap 4</strong> e do <strong>jQuery</strong>, que são fundamentais para o desenvolvimento web moderno. Aprenderemos sobre o Sistema de Grade e Cards do Bootstrap, e os métodos <code>toggle()</code> e <code>css()</code> do jQuery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Componentes Bootstrap 4</h2>
+
+        <h3 class="mt-4">1. Sistema de Grade (Grid System)</h3>
+        <p>
+            O <strong>Sistema de Grade</strong> do Bootstrap permite criar layouts de página responsivos e flexíveis, dividindo o espaço disponível em até 12 colunas. As colunas se reorganizam automaticamente dependendo do tamanho da tela do dispositivo, garantindo que seu site seja visualmente agradável em telefones, tablets e desktops. Se você não quiser usar todas as 12 colunas individualmente, pode agrupá-las para criar colunas mais amplas.
+        </p>
+        <p>
+            O Bootstrap 4 possui cinco classes de grade que definem o comportamento das colunas em diferentes tamanhos de tela:
+            <ul>
+                <li><code>.col-</code> (dispositivos extra pequenos - telas com largura menor que 576px)</li>
+                <li><code>.col-sm-</code> (dispositivos pequenos - telas com largura igual ou maior que 576px)</li>
+                <li><code>.col-md-</code> (dispositivos médios - telas com largura igual ou maior que 768px)</li>
+                <li><code>.col-lg-</code> (dispositivos grandes - telas com largura igual ou maior que 992px)</li>
+                <li><code>.col-xl-</code> (dispositivos extra grandes - telas com largura igual ou maior que 1200px)</li>
+            </ul>
+        </p>
+        <p>
+            As classes acima podem ser combinadas para criar layouts mais dinâmicos e flexíveis. Para usar, você cria uma linha (`<div class="row">`). Em seguida, adicione o número desejado de colunas (tags com classes `.col-*-*` apropriadas). O primeiro asterisco (*) representa a responsividade (sm, md, lg ou xl), enquanto o segundo representa um número, que deve somar 12 para cada linha.
+        </p>
+
+        <h4 class="mt-4">Exemplo: Três Colunas Iguais</h4>
+        <p>Este exemplo mostra como criar três colunas de largura igual em todos os dispositivos e telas. Em vez de adicionar um número a cada `col`, você pode deixar o Bootstrap lidar com a disposição para criar colunas de larguras iguais: dois elementos `col` criam duas colunas com largura de 50%, três `cols` = 33.33%, quatro `cols` = 25%.</p>
+        <div class="exemplo-codigo">
+<pre><code>
+<div class="container mt-4">
+    <h3>Exemplo de Grid: Três Colunas Iguais</h3>
+    <p>Este exemplo mostra como criar três colunas de largura igual em todos os dispositivos e telas.</p>
+    <div class="row">
+        <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
+        <div class="col" style="background-color:lavenderblush; border:1px solid grey;">.col</div>
+        <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
+    </div>
+</div>
+</code></pre>
+        </div>
+        <div class="row mt-3">
+            <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
+            <div class="col" style="background-color:lavenderblush; border:1px solid grey;">.col</div>
+            <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
+        </div>
+
+        <h3 class="mt-5">2. Cards</h3>
+        <p>
+            Um <strong>Card</strong> no Bootstrap 4 é uma caixa com bordas e um espaçamento em torno de seu conteúdo. Ele inclui opções para cabeçalhos, rodapés, conteúdo, cores, etc. No Bootstrap 3, cards substituem os panels, wells e thumbnails.
+        </p>
+        <p>
+            Um card básico é criado com a classe <code>.card</code> e o conteúdo dentro do card que tem uma classe <code>.card-body</code>.
+        </p>
+
+        <h4 class="mt-4">Exemplo: Card Básico com Cabeçalho e Rodapé</h4>
+        <p>Você pode adicionar um título para o card usando a classe <code>.card-header</code> e um rodapé com a classe <code>.card-footer</code>.</p>
+        <div class="exemplo-codigo">
+<pre><code>
+<div class="container mt-4">
+    <h3>Exemplo de Componente: Cards</h3>
+    <p>Um card básico é criado com a classe <code>.card</code> e o conteúdo dentro do card que tem uma classe <code>.card-body</code>.</p>
+    <div class="card" style="width:400px">
+        <div class="card-header">Cabeçalho do Card</div>
+        <div class="card-body">Conteúdo do Card. Aqui você pode colocar textos, imagens, etc.</div>
+        <div class="card-footer">Rodapé do Card</div>
+    </div>
+</div>
+</code></pre>
+        </div>
+        <div class="card mt-3" style="width:400px;">
+            <div class="card-header">Cabeçalho do Card</div>
+            <div class="card-body">Conteúdo do Card. Aqui você pode colocar textos, imagens, etc.</div>
+            <div class="card-footer">Rodapé do Card</div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2>Funções jQuery</h2>
+
+        <h3 class="mt-4">1. Método <code>toggle()</code></h3>
+        <p>
+            O método <code>toggle()</code> do jQuery é utilizado para alternar entre ocultar e mostrar um elemento. Os elementos visíveis são ocultados e os elementos ocultos são mostrados.
+        </p>
+        <p>
+            A sintaxe é: <code>$(selector).toggle(speed, callback);</code>.
+            <ul>
+                <li>O parâmetro opcional <code>speed</code> especifica a velocidade da ocultação/exibição e pode assumir os valores: "slow", "fast" ou milissegundos.</li>
+                <li>O parâmetro opcional de retorno de chamada (<code>callback</code>) é uma função a ser executada após a conclusão do <code>toggle()</code>.</li>
+            </ul>
+        </p>
+
+        <h4 class="mt-4">Exemplo: Alternar Visibilidade de Parágrafos</h4>
+        <p>Clique no botão abaixo para alternar a visibilidade dos parágrafos com um efeito de deslizamento lento.</p>
+        <div class="exemplo-codigo">
+<pre><code>
+<div class="container mt-4">
+    <h3>Exemplo de Função jQuery: <code>toggle()</code></h3>
+    <p>Clique no botão abaixo para alternar a visibilidade dos parágrafos.</p>
+    <button class="btn btn-info">Alternar Parágrafos</button>
+    <p id="p-toggle-1">Este é o primeiro parágrafo.</p>
+    <p id="p-toggle-2">Este é o segundo parágrafo.</p>
+</div>
+
+
+</code></pre>
+        </div>
+        <h3 class="mt-5">2. Método <code>css()</code></h3>
+        <p>
+            O método <code>css()</code> do jQuery é utilizado para definir ou retornar o valor de uma ou mais propriedades CSS dos elementos selecionados.
+        </p>
+        <p>
+            Para <strong>retornar</strong> o valor de uma propriedade CSS especificada, use a sintaxe: <code>$(selector).css("propertyname");</code>.
+            Para <strong>definir</strong> uma propriedade CSS especificada, use a sintaxe: <code>$(selector).css("propertyname", "value");</code>.
+            Para <strong>definir várias propriedades CSS</strong>, use a sintaxe: <code>$(selector).css({"propertyname": "value", "propertyname": "value", ...});</code>.
+        </p>
+
+        <h4 class="mt-4">Exemplo: Mudar Estilo de Parágrafos</h4>
+        <p>Este exemplo define a cor de fundo e o tamanho da fonte de todos os parágrafos marcados como `.css-example-p` para amarelo e 200%, respectivamente, quando o botão é clicado.</p>
+        <div class="exemplo-codigo">
+<pre><code>
+<div class="container mt-4">
+    <h3>Exemplo de Função jQuery: <code>css()</code></h3>
+    <p class="css-example-p" style="background-color:lightblue;">Este é um parágrafo com conteúdo.</p>
+    <p class="css-example-p" style="background-color:lightgreen;">Este é outro parágrafo.</p>
+    <button class="btn btn-warning">Mudar Estilo dos Parágrafos</button>
+</div>
+
+
+</code></pre>
+        </div>
+    </div>
+
+    <footer class="bg-success text-white mt-5 pt-2 pb-1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-1 mb-md-0">
+                    <h6>Campus Cuiabá - Octayde Jorge da Silva</h6>
+                    <p class="mb-0"><strong>Endereço:</strong> Av. Senador Filinto Müller, 953 - Cristo Rei, Cuiabá - MT, 78050-000</p>
+                    <p class="mb-0"><strong>Telefone:</strong> (65) 3616-4100</p>
+                    <p class="mb-0"><strong>E-mail:</strong> <a href="mailto:direcao.cba@ifmt.edu.br" class="text-white">direcao.cba@ifmt.edu.br</a></p>
+                    <p class="mb-0"><strong>Site:</strong> <a href="https://octayde.ifmt.edu.br/" target="_blank" class="text-white">octayde.ifmt.edu.br</a></p>
+                </div>
+                <div class="col-md-6">
+                    <div class="embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=IFMT+Campus+Cuiab%C3%A1+-+Octayde+Jorge+da+Silva&output=embed" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+  
+</body>
+</html>
