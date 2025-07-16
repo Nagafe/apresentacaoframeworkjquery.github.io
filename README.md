@@ -52,6 +52,7 @@ Esta página funciona como um guia prático para entender e implementar recursos
   * **Funções jQuery:**
       * **Método `toggle()`:** Explica como usar este método para alternar a visibilidade de elementos HTML com animações, acompanhado de um botão interativo.
       * **Método `css()`:** Detalha como manipular as propriedades CSS de elementos HTML dinamicamente, com um exemplo que altera a cor de fundo e o tamanho da fonte de parágrafos.
+      * **Método `animate()`:** Explica como usar este método para criar animações personalizadas de propriedades CSS, como mover um elemento ou alterar seu tamanho e opacidade ao longo do tempo.
 
 -----
 
