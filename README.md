@@ -81,7 +81,7 @@ apresentacaoframeworkjquery.github.io/  (raiz do seu repositório)
 ## 🔗 GitHub Pages
 
 
-<a href="https://nagafe.github.io/apresentacaoframeworkjquery.github.io/tutorial.html" target="_blank">Acesse o tutorial jQuery e Bootstrap 4</a>
+https://nagafe.github.io/apresentacaoframeworkjquery.github.io/tutorial.html
 
 
 ## 🛠️ Tecnologias Utilizadas
