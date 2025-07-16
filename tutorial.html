@@ -22,19 +22,74 @@
         .exemplo-codigo pre {
             margin: 0;
         }
+        /* Estilo para o elemento a ser animado */
+        #animated-box {
+            background-color: #98bf21;
+            height: 100px;
+            width: 100px;
+            position: relative; /* Importante para a animação com 'left' */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            left: 0px; /* Posição inicial */
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
     </style>
-   
-      <script>
+    <script>
         $(document).ready(function() {
-            $(".btn-warning").click(function(){
-                $(".css-example-p").css({"background-color": "yellow", "font-size": "200%"});
+            // Inicializa o carousel (se o ID 'foto' existir nesta página)
+            $('#foto').carousel({
+                interval: 5000,
+                ride: 'carousel'
             });
-            
-            $(document).ready(function(){
-                $(".btn-info").click(function(){
-                $("#p-toggle-1, #p-toggle-2").toggle("slow"); // Altera a visibilidade dos parágrafos específicos
+
+            // --- Funcionalidade jQuery: Método toggle() ---
+            $("#toggle-paragraphs-btn").click(function() {
+                // Altera a visibilidade dos parágrafos específicos com animação lenta
+                $("#p-toggle-1, #p-toggle-2").toggle("slow");
+            });
+
+            // --- Funcionalidade jQuery: Método css() com toggle ---
+let estiloAtivo = false;
+
+$("#change-style-btn").click(function() {
+    if (!estiloAtivo) {
+        $(".css-example-p").css({
+            "background-color": "yellow",
+            "font-size": "200%"
         });
-    });
+    } else {
+        $(".css-example-p").css({
+            "background-color": "",
+            "font-size": ""
+        });
+    }
+    estiloAtivo = !estiloAtivo;
+});
+
+// --- Funcionalidade jQuery: Método animate() com toggle ---
+let  animado = false;
+
+$("#animate-box-btn").click(function() {
+    if (!animado) {
+        $("#animated-box").animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+        }, "slow");
+    } else {
+        $("#animated-box").animate({
+            left: '0px',
+            opacity: '1',
+            height: '100px',
+            width: '100px'
+        }, "slow");
+    }
+    animado = !animado;
+});
 
         });
     </script>
@@ -68,7 +123,7 @@
                 <h1>Tutorial: jQuery e Bootstrap 4</h1>
                 <div class="col-8 d-flex flex-column align-items-center">
                     <p>
-                        Nesta página, vamos explorar alguns componentes e funcionalidades essenciais do <strong>Bootstrap 4</strong> e do <strong>jQuery</strong>, que são fundamentais para o desenvolvimento web moderno. Aprenderemos sobre o Sistema de Grade e Cards do Bootstrap, e os métodos <code>toggle()</code> e <code>css()</code> do jQuery.
+                        Nesta página, vamos explorar alguns componentes e funcionalidades essenciais do <strong>Bootstrap 4</strong> e do <strong>jQuery</strong>, que são fundamentais para o desenvolvimento web moderno. Aprenderemos sobre o Sistema de Grade e Cards do Bootstrap, e os métodos <code>toggle()</code>, <code>css()</code> e <code>animate()</code> do jQuery.
                     </p>
                 </div>
             </div>
@@ -99,7 +154,7 @@
         <h4 class="mt-4">Exemplo: Três Colunas Iguais</h4>
         <p>Este exemplo mostra como criar três colunas de largura igual em todos os dispositivos e telas. Em vez de adicionar um número a cada `col`, você pode deixar o Bootstrap lidar com a disposição para criar colunas de larguras iguais: dois elementos `col` criam duas colunas com largura de 50%, três `cols` = 33.33%, quatro `cols` = 25%.</p>
         <div class="exemplo-codigo">
-<pre><code>
+            <pre><code>
 <div class="container mt-4">
     <h3>Exemplo de Grid: Três Colunas Iguais</h3>
     <p>Este exemplo mostra como criar três colunas de largura igual em todos os dispositivos e telas.</p>
@@ -109,7 +164,7 @@
         <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
     </div>
 </div>
-</code></pre>
+            </code></pre>
         </div>
         <div class="row mt-3">
             <div class="col" style="background-color:lavender; border:1px solid grey;">.col</div>
@@ -128,7 +183,7 @@
         <h4 class="mt-4">Exemplo: Card Básico com Cabeçalho e Rodapé</h4>
         <p>Você pode adicionar um título para o card usando a classe <code>.card-header</code> e um rodapé com a classe <code>.card-footer</code>.</p>
         <div class="exemplo-codigo">
-<pre><code>
+            <pre><code>
 <div class="container mt-4">
     <h3>Exemplo de Componente: Cards</h3>
     <p>Um card básico é criado com a classe <code>.card</code> e o conteúdo dentro do card que tem uma classe <code>.card-body</code>.</p>
@@ -138,7 +193,7 @@
         <div class="card-footer">Rodapé do Card</div>
     </div>
 </div>
-</code></pre>
+            </code></pre>
         </div>
         <div class="card mt-3" style="width:400px;">
             <div class="card-header">Cabeçalho do Card</div>
@@ -165,18 +220,13 @@
         <h4 class="mt-4">Exemplo: Alternar Visibilidade de Parágrafos</h4>
         <p>Clique no botão abaixo para alternar a visibilidade dos parágrafos com um efeito de deslizamento lento.</p>
         <div class="exemplo-codigo">
-<pre><code>
-<div class="container mt-4">
-    <h3>Exemplo de Função jQuery: <code>toggle()</code></h3>
-    <p>Clique no botão abaixo para alternar a visibilidade dos parágrafos.</p>
-    <button class="btn btn-info">Alternar Parágrafos</button>
-    <p id="p-toggle-1">Este é o primeiro parágrafo.</p>
-    <p id="p-toggle-2">Este é o segundo parágrafo.</p>
-</div>
-
-
-</code></pre>
+            <pre><code>
+<button id="toggle-paragraphs-btn" class="btn btn-info mt-3">Alternar Parágrafos</button>
+<p id="p-toggle-1">Este é o primeiro parágrafo que será alternado.</p>
+<p id="p-toggle-2">Este é o segundo parágrafo que será alternado.</p>
+            </code></pre>
         </div>
+
         <h3 class="mt-5">2. Método <code>css()</code></h3>
         <p>
             O método <code>css()</code> do jQuery é utilizado para definir ou retornar o valor de uma ou mais propriedades CSS dos elementos selecionados.
@@ -190,16 +240,36 @@
         <h4 class="mt-4">Exemplo: Mudar Estilo de Parágrafos</h4>
         <p>Este exemplo define a cor de fundo e o tamanho da fonte de todos os parágrafos marcados como `.css-example-p` para amarelo e 200%, respectivamente, quando o botão é clicado.</p>
         <div class="exemplo-codigo">
-<pre><code>
-<div class="container mt-4">
-    <h3>Exemplo de Função jQuery: <code>css()</code></h3>
-    <p class="css-example-p" style="background-color:lightblue;">Este é um parágrafo com conteúdo.</p>
-    <p class="css-example-p" style="background-color:lightgreen;">Este é outro parágrafo.</p>
-    <button class="btn btn-warning">Mudar Estilo dos Parágrafos</button>
-</div>
+            <pre><code>
+<p class="css-example-p" style="background-color:lightblue;">Este é um parágrafo com conteúdo.</p>
+<p class="css-example-p" style="background-color:lightgreen;">Este é outro parágrafo.</p>
+<button id="change-style-btn" class="btn btn-warning mt-3">Mudar Estilo dos Parágrafos</button>
+            </code></pre>
+        </div>
+        
+        <h3 class="mt-5">3. Método <code>animate()</code></h3>
+        <p>
+            O método <code>animate()</code> do jQuery é usado para criar animações personalizadas de propriedades CSS. Ele pode animar qualquer propriedade CSS que aceite valores numéricos.
+        </p>
+        <p>
+            A sintaxe é: <code>$(selector).animate({params}, speed, callback);</code>.
+            <ul>
+                <li>`params`: Um objeto JavaScript que define as propriedades CSS a serem animadas (por exemplo, `{left: '250px', opacity: '0.5'}`).</li>
+                <li>`speed` (opcional): A velocidade da animação ("slow", "fast" ou milissegundos).</li>
+                <li>`callback` (opcional): Uma função a ser executada após a conclusão da animação.</li>
+            </ul>
+        </p>
+        <p class="alert alert-info">
+            **Importante:** Para animar propriedades de posição como `left` ou `top`, o elemento HTML deve ter sua propriedade CSS `position` definida como `relative`, `absolute`, `fixed` ou `sticky`.
+        </p>
 
-
-</code></pre>
+        <h4 class="mt-4">Exemplo: Animar Posição e Tamanho de um Elemento</h4>
+        <p>Clique no botão abaixo para mover a caixa para a direita e aumentar seu tamanho.</p>
+        <div class="exemplo-codigo">
+            <pre><code>
+        <button id="animate-box-btn" class="btn btn-primary">Iniciar Animação</button>
+        <div id="animated-box">Olá!</div>
+            </code></pre>
         </div>
     </div>
 
@@ -221,7 +291,5 @@
             </div>
         </div>
     </footer>
-    
-  
 </body>
 </html>
