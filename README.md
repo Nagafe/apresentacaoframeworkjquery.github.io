@@ -80,9 +80,7 @@ apresentacaoframeworkjquery.github.io/  (raiz do seu repositório)
 
 ## 🔗 GitHub Pages
 
-
-https://nagafe.github.io/apresentacaoframeworkjquery.github.io/tutorial.html
-
+https://nagafe.github.io/apresentacaoframeworkjquery.github.io/index.html
 
 ## 🛠️ Tecnologias Utilizadas
 
